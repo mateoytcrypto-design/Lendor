@@ -1,0 +1,42 @@
+{
+  "name": "Withdrawal",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user requesting withdrawal"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Amount of USDT to withdraw"
+    },
+    "wallet_address": {
+      "type": "string",
+      "description": "Wallet address where the user wants to receive the funds"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Status of the withdrawal"
+    },
+    "approved_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date when admin approved the withdrawal"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Admin notes"
+    }
+  },
+  "required": [
+    "user_email",
+    "amount",
+    "wallet_address"
+  ]
+}

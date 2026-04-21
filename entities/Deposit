@@ -1,0 +1,37 @@
+{
+  "name": "Deposit",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email of the user who made the deposit"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Amount of VCDT deposited"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Status of the deposit"
+    },
+    "confirmed_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date when admin confirmed the deposit"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Admin notes"
+    }
+  },
+  "required": [
+    "user_email",
+    "amount"
+  ]
+}
